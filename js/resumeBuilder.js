@@ -108,23 +108,23 @@ var work = {
 
 var projects = {
     projects: [{
-                title:
-                dates:
-                description:
-                images:
+                title: '',
+                dates:'',
+                description: '',
+                images: ''
 
                 },
                 {
-                title:
-                dates:
-                description:
-                images:
+                title: '',
+                dates:'',
+                description: '',
+                images: ''
                 },
                 {
-                title:
-                dates:
-                description:
-                images:
+                title: '',
+                dates: '',
+                description: "",
+                images: ''
                 }],
     display: function(){
 

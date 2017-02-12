@@ -132,13 +132,6 @@ a {
   background-color: #484848;
 }
 
-#topContacts li {
-  color: white;
-}
-
-#topContacts li span {
-  color: #f5a623;
-}
 
 .flex-box {
   display: -webkit-flex;
@@ -154,7 +147,9 @@ a {
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 10px;
+  padding-top: 0;
 }
+
 
 .center-content {
   padding: 2.5% 5%;

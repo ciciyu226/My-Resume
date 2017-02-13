@@ -25,6 +25,8 @@ var bio = {
         $('#name').next().text(bio.role);
 
         /* Contacts */
+        /*TODO: create HTMLlinkedin with the generic one*/
+        var HTMLlinkedin = HTMLcontactGeneric.replace('%contact%', 'linkedin');
         $('#topContacts').append(HTMLmobile, HTMLemail, HTMLgithub, HTMLlinkedin, HTMLlocation);
         /** fill out each contact info**/
         var index = 0;
@@ -108,25 +110,93 @@ var work = {
 
 var projects = {
     projects: [{
-                title: '',
-                dates:'',
-                description: '',
-                images: ''
+                title: 'Online Resume',
+                dates:'02/2017',
+                description: 'jdfklasjfsa',
+                technology: 'HTML, CSS, Javascript, jQuery',
+                images: 'http://loremflickr.com/320/240/dog'
 
                 },
                 {
-                title: '',
-                dates:'',
-                description: '',
-                images: ''
+                title: 'Chilly',
+                dates: 'In progress',
+                description: 'fdafeasfdasfdaaa',
+                technology: 'HTML, CSS, Javascript, AngularJS, Ionic Framework, Firebase',
+                images: 'http://loremflickr.com/320/240/dog'
                 },
                 {
-                title: '',
-                dates: '',
-                description: "",
-                images: ''
+                title: 'Animal Trading Card',
+                dates: '01/20/2017 -- 01/22/2017',
+                description: "fdafeasfdasfdaaa fdafeasfdasfd",
+                technology: 'HTML, CSS;',
+                images: 'http://loremflickr.com/320/240/dog'
                 }],
+
     display: function(){
+        $('#projects').append(HTMLprojectStart);
+        var formattedPTitle = '';
+        var formattedPDates = '';
+        var formattedPDescription = '';
+        var formattedPTechnology= '';
+        var formattedPImages = '';
+        var HTMLTechnology = '<div class="technology-text"><b>Skills Used: %data%</b></div>';
+        var projectArray = projects.projects;
+        /* TODO: add alt to imgaes */
+        /* Array of href for each project */
+        var hrefs = ['#', 'https://github.com/EmoBarney/Chilly', '2.fend-animal-trading-cards-master/card.html'];
+        for(var i = 0; i < projectArray.length; i++){
+            formattedPTitle = HTMLprojectTitle.replace('%data%', projectArray[i].title);
+            formattedPTitle = formattedPTitle.replace('#', hrefs[i]);
+            $('.project-entry').append(formattedPTitle);
+            formattedPDates = HTMLprojectDates.replace('%data%', projectArray[i].dates);
+            $('.project-entry').append(formattedPDates);
+            formattedPDescription = HTMLprojectDescription.replace('%data%', projectArray[i].description);
+            $('.project-entry').append(formattedPDescription);
+            formattedPTechnology = HTMLTechnology.replace('%data%', projectArray[i].technology);
+            $('.project-entry').append(formattedPTechnology);
+            formattedPImages = HTMLprojectImage.replace('%data%', projectArray[i].images);
+            $('.project-entry').append(formattedPImages);
+
+        }
+    }
+}//end of project object
+
+var education = {
+    schools: [{
+                name: '',
+                location:'',
+                degree: '',
+                majors: ['','',''],
+                dates: '',
+                url: ''
+             },{
+                name: '',
+                location:'',
+                degree: '',
+                majors: ['','',''],
+                dates: '',
+                url: ''
+             },{
+                name: '',
+                location:'',
+                degree: '',
+                majors: ['','',''],
+                dates: '',
+                url: ''
+             }],
+    onlineCourses: [{
+                title: '',
+                school: '',
+                dates: '',
+                url: ''
+             },{
+                title: '',
+                school: '',
+                dates: '',
+                url: ''
+             }],
+    display: function(){
+
 
 
 
@@ -135,15 +205,15 @@ var projects = {
 
 
 
-}
 
+}
 
 /* call display function */
 
 bio.display();
 work.display();
-// project.display();
-// education.display();
+projects.display();
+//education.display();
 
 // /* Header contents */
 // /* Name and title */

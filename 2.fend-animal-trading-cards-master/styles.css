@@ -1,0 +1,41 @@
+/* add your CSS here */
+#full-wrapper {   
+	background-color: #93e6ff;
+	border: 1px solid grey;
+	border-radius:1px;
+	box-shadow: 15px 15px 20px grey;
+
+	width: 330px;
+	margin: auto;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.name {
+	margin-left: 12px;
+}
+
+.profile-img {
+	display: block;
+	width: 300px;
+	border: 3px dashed #f9fffb;
+	margin: 20px auto;
+}
+
+#text-wrapper ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#text-wrapper  {
+	/*margin-left: 0;*/
+	width: 270px;  /* 306 - 2*(15)(padding) - 2*3(border) = 270*/
+	padding: 20px 15px;
+	border: 3px dashed #f9fffb;
+	margin: 20px auto;
+
+}
+
+#text-wrapper ul li span {
+	font-weight: bold;
+}
+

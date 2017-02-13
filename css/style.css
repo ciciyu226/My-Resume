@@ -44,6 +44,7 @@ h3 {
   font-size: 20px;
   color: #000;
   line-height: 22px;
+  padding: 30px 10px 0 0;
 }
 
 h4 {
@@ -54,7 +55,7 @@ h4 {
 }
 
 h2,
-h3,
+#skills-h3,
 h4,
 h5 {
   padding: 10px 5%;

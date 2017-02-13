@@ -114,7 +114,7 @@ var projects = {
                 dates:'02/2017',
                 description: 'jdfklasjfsa',
                 technology: 'HTML, CSS, Javascript, jQuery',
-                images: 'http://loremflickr.com/320/240/dog'
+                images: ['http://placehold.it/300x200','http://placehold.it/300x200']
 
                 },
                 {
@@ -122,14 +122,14 @@ var projects = {
                 dates: 'In progress',
                 description: 'fdafeasfdasfdaaa',
                 technology: 'HTML, CSS, Javascript, AngularJS, Ionic Framework, Firebase',
-                images: 'http://loremflickr.com/320/240/dog'
+                images: ['http://placehold.it/300x200', 'http://placehold.it/300x200']
                 },
                 {
                 title: 'Animal Trading Card',
                 dates: '01/20/2017 -- 01/22/2017',
                 description: "fdafeasfdasfdaaa fdafeasfdasfd",
                 technology: 'HTML, CSS;',
-                images: 'http://loremflickr.com/320/240/dog'
+                images: ['http://placehold.it/300x200','http://placehold.it/300x200']
                 }],
 
     display: function(){
@@ -154,8 +154,12 @@ var projects = {
             $('.project-entry').append(formattedPDescription);
             formattedPTechnology = HTMLTechnology.replace('%data%', projectArray[i].technology);
             $('.project-entry').append(formattedPTechnology);
-            formattedPImages = HTMLprojectImage.replace('%data%', projectArray[i].images);
-            $('.project-entry').append(formattedPImages);
+            for(var j = 0; j< projectArray[i].images.length; j++){
+                formattedPImages = HTMLprojectImage.replace('%data%', projectArray[i].images[j]);
+                $('.project-entry').append(formattedPImages);
+            }
+            // formattedPImages = HTMLprojectImage.replace('%data%', projectArray[i].images);
+            // $('.project-entry').append(formattedPImages);
 
         }
     }
@@ -163,49 +167,106 @@ var projects = {
 
 var education = {
     schools: [{
-                name: '',
-                location:'',
+                name: 'University of California, San Diego',
+                location:'La Jolla, CA',
+                degree: 'B.S.',
+                majors: ['Computer Science','Mathematics'],
+                dates: '09/2013 -- 06/2017',
+                url: 'https://ucsd.edu/'
+             },{
+                name: 'Beijing NO.5 High School',
+                location:'Beijing, China',
                 degree: '',
-                majors: ['','',''],
-                dates: '',
+                majors: ['aa'],
+                dates: '09/2010 -- 06/2013',
                 url: ''
              },{
-                name: '',
-                location:'',
-                degree: '',
-                majors: ['','',''],
-                dates: '',
-                url: ''
-             },{
-                name: '',
-                location:'',
-                degree: '',
-                majors: ['','',''],
-                dates: '',
+                name: 'ABC School',
+                location:'Mars, The Milky Way',
+                degree: 'B.S.',
+                majors: ['Martian','Tennis','Music'],
+                dates: '09/3000 -- future',
                 url: ''
              }],
     onlineCourses: [{
-                title: '',
-                school: '',
-                dates: '',
-                url: ''
+                title: 'Front-End Web Developer Nanodegree',
+                school: 'Udacity',
+                dates: '01/17 -- Current',
+                url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
              },{
-                title: '',
-                school: '',
-                dates: '',
-                url: ''
+                title: 'Front-End Web Development Track',
+                school: 'Treehouse',
+                dates: '10/2016 -- 02/2017',
+                url: 'https://teamtreehouse.com/tracks/front-end-web-development'
              }],
     display: function(){
+        /* Local universities and schools */
+        $('#education').append(HTMLschoolStart);
+        var formattedschoolName = '';
+        var formattedschoolDegree= '';
+        var formattedschoolDates= '';
+        var formattedschoolLocation= '';
+        var formattedschoolMajor= '';
+        var formattedonlineTitle='';
+        var formattedonlineSchool= '';
+        var formattedonlineDates= '';
+        var formattedonlineUrl= '';
+        var formattedonlineHeader = '';
+        var schoolArray = education.schools;
+        var onlineCourseArray = education.onlineCourses;
+        var formattedschoolHeader = '';
 
+        for(var i = 0; i < schoolArray.length; i++ ){
+            formattedschoolName = HTMLschoolName.replace('%data%', schoolArray[i].name);
+            formattedschoolName = formattedschoolName.replace('#', schoolArray[i].url);
+            formattedschoolDegree = HTMLschoolDegree.replace('%data%', schoolArray[i].degree);
+            formattedschoolHeader = formattedschoolName + formattedschoolDegree;
+            $('.education-entry').append(formattedschoolHeader);
+            formattedschoolDates = HTMLschoolDates.replace('%data%', schoolArray[i].dates);
+            $('.education-entry').append(formattedschoolDates);
+            formattedschoolLocation = HTMLschoolLocation.replace('%data%', schoolArray[i].location);
+            $('.education-entry').append(formattedschoolLocation);
+            for(var j = 0; j< schoolArray[i].majors.length; j++){
+                formattedschoolMajor = HTMLschoolMajor.replace('%data%', schoolArray[i].majors[j]);
+                $('.education-entry').append(formattedschoolMajor);
+            }
+        }
 
+        /* Online courses */
+        $('.education-entry').append(HTMLonlineClasses);
+        for(var i = 0; i < onlineCourseArray.length; i++){
+            formattedonlineTitle = HTMLonlineTitle.replace('%data%', onlineCourseArray[i].title);
+            formattedonlineTitle = formattedonlineTitle.replace('#', onlineCourseArray[i].url);
+            formattedonlineSchool = HTMLonlineSchool.replace('%data%', onlineCourseArray[i].school);
+            formattedonlineHeader = formattedonlineTitle + formattedonlineSchool;
+            $('.education-entry').append(formattedonlineHeader);
+            formattedonlineDates = HTMLonlineDates.replace('%data%', onlineCourseArray[i].dates);
+            $('.education-entry').append(formattedonlineDates);
 
+            formattedonlineUrl = HTMLonlineURL.replace('%data%', onlineCourseArray[i].url);
+            formattedonlineUrl = formattedonlineUrl.replace('#', onlineCourseArray[i].url);
+            $('.education-entry').append(formattedonlineUrl);
+        }
 
     }
+}//end of education object
+
+/* Map */
 
 
 
 
+/*Let's Connect */
+function fillFooter(){
+    var HTMLlinkedin = HTMLcontactGeneric.replace('%contact%', 'linkedin');
+        $('#footerContacts').append(HTMLmobile, HTMLemail, HTMLgithub, HTMLlinkedin, HTMLlocation);
+        /** fill out each contact info**/
+        var index = 0;
+        for(var property in bio.Contacts){
+            $('#footerContacts li').eq(index).children().last().text(bio.Contacts[property]);
+            index++;
 
+    }
 }
 
 /* call display function */
@@ -213,7 +274,8 @@ var education = {
 bio.display();
 work.display();
 projects.display();
-//education.display();
+education.display();
+fillFooter();
 
 // /* Header contents */
 // /* Name and title */

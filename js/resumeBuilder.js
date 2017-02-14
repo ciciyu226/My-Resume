@@ -32,9 +32,11 @@ var bio = {
         /** fill out each contact info**/
         var index = 0;
         for(var property in bio.contacts){
-            $('#topContacts li').eq(index).children().last().text(bio.contacts[property]);
-            index++;
+            if(bio.contacts.hasOwnProperty(property)){
+                $('#topContacts li').eq(index).children().last().text(bio.contacts[property]);
 
+            index++;
+            }
         }
         /* Profile picture */
         $('#header').append(HTMLbioPic);
@@ -53,7 +55,7 @@ var bio = {
         $('.welcome-message').text(bio.welcomeMessage);
         }
 
-} //end of object bio
+}; //end of object bio
 
 /** object work **/
 var work = {
@@ -107,7 +109,7 @@ var work = {
         }
     }
 
-}//end of work object
+};//end of work object
 
 var projects = {
     projects: [{
@@ -164,7 +166,7 @@ var projects = {
 
         }
     }
-}//end of project object
+};//end of project object
 
 var education = {
     schools: [{
@@ -235,7 +237,7 @@ var education = {
 
         /* Online courses */
         $('.education-entry').append(HTMLonlineClasses);
-        for(var i = 0; i < onlineCourseArray.length; i++){
+        for(i = 0; i < onlineCourseArray.length; i++){
             formattedonlineTitle = HTMLonlineTitle.replace('%data%', onlineCourseArray[i].title);
             formattedonlineTitle = formattedonlineTitle.replace('#', onlineCourseArray[i].url);
             formattedonlineSchool = HTMLonlineSchool.replace('%data%', onlineCourseArray[i].school);
@@ -250,7 +252,7 @@ var education = {
         }
 
     }
-}//end of education object
+};//end of education object
 
 /* TODO: Map */
 $('#mapDiv').append(googleMap);
@@ -264,9 +266,10 @@ function fillFooter(){
         /** fill out each contact info**/
         var index = 0;
         for(var property in bio.contacts){
+          if(bio.contacts.hasOwnProperty(property)){
             $('#footerContacts li').eq(index).children().last().text(bio.contacts[property]);
             index++;
-
+          }
     }
 }
 
@@ -276,66 +279,7 @@ bio.display();
 work.display();
 projects.display();
 education.display();
-/* TODO: call map functions */
 
 
 
 fillFooter();
-
-// /* Header contents */
-// /* Name and title */
-// $('#header').prepend(HTMLheaderName);
-// $('#name').text('Cici Yu');
-
-// $(HTMLheaderRole).insertAfter('#name');
-// $('#name').next().text('Web Developer');
-
-// /* Contacts */
-// $('#topContacts').append(HTMLmobile);
-// $('#topContacts').append(HTMLemail);
-// $('#topContacts').append(HTMLgithub);
-// $('#topContacts').append(HTMLlinkedin);
-// $('#topContacts').append(HTMLlocation);
-// /** fill out each contact info**/
-// for(var i = 0 ; i < contactArray.length; i++ ){
-// $('#topContacts li').eq(i).children().last().text(contactArray[i]);
-// };
-
-// /* Profile picture */
-// $('#header').append(HTMLbioPic);
-// $('.biopic').attr('src', 'images/fry.jpg');
-// $('.biopic').attr('alt', "Cici's profile picture");
-
-// /* Welcome msg and skillset, I switched the order of welcome message and skill set on purpose. */
-// $('#header').append(HTMLskillsStart);
-// for(var i = 0; i < skillArray.length; i++ ){
-//     $('#skills').append(HTMLskills);
-//     $('#skills li').eq(i).children().text(skillArray[i]);
-
-// }
-
-// $('#header').append(HTMLwelcomeMsg);
-// $('.welcome-message').text('Hi, this is Cici Yu. I have a great passion for website and web app development. Feel free to check all my projects! I am getting my bachlor degree in math-computer science in June, 2017 from UCSD and I am currently seeking for a full-time web(front-end) developer position.');
-
-// /* Work experience */
-// $('#workExperience').append(HTMLworkStart);
-
-// $('.work-entry').append(HTMLworkEmployer);
-// $('.work-entry a').text('UCSD');
-// $('.work-entry a').append(HTMLworkTitle);
-// $('.work-entry a').text('Freelance Web Developer');
-
-// $('.work-entry').append(HTMLworkDates);
-// $('.work-entry').append(HTMLworkLocation);
-// $('.work-entry').append(HTMLworkDescription);
-
-
-
-// $('.work-entry').append(HTMLworkEmployer);
-// $('.work-entry a').text('Freelance Web Developer');
-// $('.work-entry a').append(HTMLworkTitle);
-// $('.work-entry a').text('');
-
-
-
-

@@ -7,7 +7,7 @@
 var bio = {
     name: 'Cici Yu',
     role: 'Web Developer',
-    Contacts: {
+    contacts: {
         mobile: '(619)-888-9962',
         email: 'ciciyu226@gmail.com',
         github: 'ciciyu226',
@@ -21,6 +21,7 @@ var bio = {
         $('#header').prepend(HTMLheaderName);
         $('#name').text(bio.name);
 
+
         $(HTMLheaderRole).insertAfter('#name');
         $('#name').next().text(bio.role);
 
@@ -30,8 +31,8 @@ var bio = {
         $('#topContacts').append(HTMLmobile, HTMLemail, HTMLgithub, HTMLlinkedin, HTMLlocation);
         /** fill out each contact info**/
         var index = 0;
-        for(var property in bio.Contacts){
-            $('#topContacts li').eq(index).children().last().text(bio.Contacts[property]);
+        for(var property in bio.contacts){
+            $('#topContacts li').eq(index).children().last().text(bio.contacts[property]);
             index++;
 
         }
@@ -128,7 +129,7 @@ var projects = {
                 title: 'Animal Trading Card',
                 dates: '01/20/2017 -- 01/22/2017',
                 description: "fdafeasfdasfdaaa fdafeasfdasfd",
-                technology: 'HTML, CSS;',
+                technology: 'HTML, CSS',
                 images: ['http://placehold.it/300x200','http://placehold.it/300x200']
                 }],
 
@@ -251,8 +252,8 @@ var education = {
     }
 }//end of education object
 
-/* Map */
-
+/* TODO: Map */
+$('#mapDiv').append(googleMap);
 
 
 
@@ -262,8 +263,8 @@ function fillFooter(){
         $('#footerContacts').append(HTMLmobile, HTMLemail, HTMLgithub, HTMLlinkedin, HTMLlocation);
         /** fill out each contact info**/
         var index = 0;
-        for(var property in bio.Contacts){
-            $('#footerContacts li').eq(index).children().last().text(bio.Contacts[property]);
+        for(var property in bio.contacts){
+            $('#footerContacts li').eq(index).children().last().text(bio.contacts[property]);
             index++;
 
     }
@@ -275,6 +276,10 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+/* TODO: call map functions */
+
+
+
 fillFooter();
 
 // /* Header contents */

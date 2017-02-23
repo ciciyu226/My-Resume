@@ -11,7 +11,7 @@ var bio = {
         mobile: '(619)-888-9962',
         email: 'ciciyu226@gmail.com',
         github: 'ciciyu226',
-        linkedin: 'XXX',
+        linkedin: 'Updating..',
         location: 'San Diego, CA'
     },
     welcomeMessage: 'Hi, this is Cici Yu. I have a great passion for website and web app development. Feel free to check all my projects! I am getting my bachlor degree in math-computer science in June, 2017 from UCSD and I am currently seeking for a full-time web(front-end) developer position.',
@@ -115,7 +115,7 @@ var projects = {
     projects: [{
                 title: 'Online Resume',
                 dates:'02/2017',
-                description: 'jdfklasjfsa',
+                description: 'My online resume.',
                 technology: 'HTML, CSS, Javascript, jQuery',
                 images: ['http://placehold.it/300x200','http://placehold.it/300x200']
 
@@ -123,14 +123,14 @@ var projects = {
                 {
                 title: 'Chilly',
                 dates: 'In progress',
-                description: 'fdafeasfdasfdaaa',
+                description: 'This is an ionic app for keeping track of food consumption in your refrigerator based on expiration date <br> and quantity. It also has a to-buy list feature to dynamically remind you of groceries that you want to buy. ',
                 technology: 'HTML, CSS, Javascript, AngularJS, Ionic Framework, Firebase',
                 images: ['http://placehold.it/300x200', 'http://placehold.it/300x200']
                 },
                 {
                 title: 'Animal Trading Card',
                 dates: '01/20/2017 -- 01/22/2017',
-                description: "fdafeasfdasfdaaa fdafeasfdasfd",
+                description: "Little card of fun fact and info about my kitty - Fir.",
                 technology: 'HTML, CSS',
                 images: ['http://placehold.it/300x200','http://placehold.it/300x200']
                 }],
@@ -173,22 +173,15 @@ var education = {
                 name: 'University of California, San Diego',
                 location:'La Jolla, CA',
                 degree: 'B.S.',
-                majors: ['Computer Science','Mathematics'],
+                majors: ['Math-Computer Science'],
                 dates: '09/2013 -- 06/2017',
                 url: 'https://ucsd.edu/'
              },{
                 name: 'Beijing NO.5 High School',
                 location:'Beijing, China',
                 degree: '',
-                majors: ['aa'],
+                majors: ['N/A'],
                 dates: '09/2010 -- 06/2013',
-                url: ''
-             },{
-                name: 'ABC School',
-                location:'Mars, The Milky Way',
-                degree: 'B.S.',
-                majors: ['Martian','Tennis','Music'],
-                dates: '09/3000 -- future',
                 url: ''
              }],
     onlineCourses: [{
